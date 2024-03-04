@@ -1,3 +1,21 @@
 <template>
-    
+    <lightning-card title="Customer Profile" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <div class="slds-grid slds-wrap">
+                <!-- Contact Details -->
+                <div class="slds-col slds-size_1-of-2">
+                    <p><strong>Name:</strong> {contact.Name}</p>
+                    <p><strong>Email:</strong> {contact.Email}</p>
+                    <p><strong>Phone:</strong> {contact.Phone}</p>
+                </div>
+                <!-- Account Details -->
+                <div class="slds-col slds-size_1-of-2">
+                    <p><strong>Account Name:</strong> {account.Name}</p>
+                    <p><strong>Industry:</strong> {account.Industry}</p>
+                </div>
+            </div>
+            <!-- Recent Activities Placeholder -->
+            <!-- Implement as needed -->
+        </div>
+    </lightning-card>
 </template>
