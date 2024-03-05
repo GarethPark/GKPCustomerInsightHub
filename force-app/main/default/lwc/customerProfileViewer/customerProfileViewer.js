@@ -13,4 +13,13 @@ export default class CustomerProfileViewer extends LightningElement {
 
     @wire(getRecord, { recordId: '$recordId', fields: ACCOUNT_FIELDS })
     account;
+
+    connectedCallback() {
+        console.log('Record ID:', this.recordId);
+    }
+
+    renderedCallback() {
+        console.log('Contact Data:', this.contact.data);
+        console.log('Contact Error:', this.contact.error);
+    }
 }
