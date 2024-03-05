@@ -1,21 +1,18 @@
 <template>
     <lightning-card title="Customer Profile" icon-name="standard:contact">
+        <template lwc:if={contact.data}>
         <div class="slds-m-around_medium">
             <div class="slds-grid slds-wrap">
                 <!-- Contact Details -->
                 <div class="slds-col slds-size_1-of-2">
-                    <p><strong>Name:</strong> {contact.data.fields.value}</p>
-                    <p><strong>Email:</strong> {contact.data.fields.Email.displayValue}</p>
-                    <p><strong>Phone:</strong> {contact.Phone}</p>
+                    <p><strong>Name:</strong> {name}</p>
                 </div>
                 <!-- Account Details -->
-                <div class="slds-col slds-size_1-of-2">
-                    <p><strong>Account Name:</strong> {account.Name}</p>
-                    <p><strong>Industry:</strong> {account.Industry}</p>
-                </div>
+                
             </div>
             <!-- Recent Activities Placeholder -->
             <!-- Implement as needed -->
         </div>
+        </template>
     </lightning-card>
 </template>

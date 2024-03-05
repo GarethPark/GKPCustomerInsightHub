@@ -1,9 +1,9 @@
 import { LightningElement } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
 import { api, wire } from 'lwc';
+import { getFieldValue } from 'lightning/uiRecordApi';
 
 const CONTACT_FIELDS = ['Contact.Name', 'Contact.Email', 'Contact.Phone'];
-const ACCOUNT_FIELDS = ['Account.Name', 'Account.Industry'];
 
 export default class CustomerProfileViewer extends LightningElement {
     @api recordId;
@@ -11,8 +11,10 @@ export default class CustomerProfileViewer extends LightningElement {
     @wire(getRecord, { recordId: '$recordId', fields: CONTACT_FIELDS })
     contact;
 
-    @wire(getRecord, { recordId: '$recordId', fields: ACCOUNT_FIELDS })
-    account;
+    get name() {
+        //console.log('name record id ' + this.recordId);
+        return this.contact.data.fields.Name.value;
+    }
 
     connectedCallback() {
         console.log('Record ID:', this.recordId);
